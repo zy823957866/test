@@ -7,7 +7,6 @@ pipeline {
     IMAGE    = "${REGISTRY}/${ACR_NS}/${APP}"
     K8S_NS   = 'apps'
   }
-  options { timestamps() }
   triggers { pollSCM('H/5 * * * *') }
   stages {
     stage('Checkout') { steps { checkout scm } }
